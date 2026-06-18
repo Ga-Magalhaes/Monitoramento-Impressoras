@@ -1,0 +1,119 @@
+- targets:
+    - 192.168.0.206
+  labels:
+    device_name: "XEROX_3655_SOE"
+    vendor: "Xerox"
+    location: "SOE"
+    role: "principal"
+    snmp_module: "printer_mib"
+    snmp_auth: "ftorino_v2"
+
+- targets:
+    - 192.168.0.207
+  labels:
+    device_name: "XEROX_3655_ALMOXARIFADO"
+    vendor: "Xerox"
+    location: "Almoxarifado"
+    role: "principal"
+    snmp_module: "printer_mib"
+    snmp_auth: "ftorino_v2"
+
+- targets:
+    - 192.168.0.208
+  labels:
+    device_name: "XEROX_C405_ADMINISTRACAO"
+    vendor: "Xerox"
+    location: "Administracao"
+    role: "principal"
+    snmp_module: "printer_mib"
+    snmp_auth: "ftorino_v2"
+
+- targets:
+    - 192.168.0.209
+  labels:
+    device_name: "XEROX_B8055_CENTRALCOPIAS"
+    vendor: "Xerox"
+    location: "CentralCopias"
+    role: "principal"
+    snmp_module: "printer_mib"
+    snmp_auth: "ftorino_v2"
+
+- targets:
+    - 192.168.0.210
+  labels:
+    device_name: "XEROX_C405_SECRETARIA"
+    vendor: "Xerox"
+    location: "Secretaria"
+    role: "principal"
+    snmp_module: "printer_mib"
+    snmp_auth: "ftorino_v2"
+
+- targets:
+    - 192.168.0.211
+  labels:
+    device_name: "XEROX_C8055_CENTRALCOPIAS"
+    vendor: "Xerox"
+    location: "CentralCopias"
+    role: "principal"
+    snmp_module: "printer_mib"
+    snmp_auth: "ftorino_v2"
+
+- targets:
+    - 192.168.0.213
+  labels:
+    device_name: "XEROX_3655_CL"
+    vendor: "Xerox"
+    location: "CL"
+    role: "principal"
+    snmp_module: "printer_mib"
+    snmp_auth: "ftorino_v2"
+
+- targets:
+    - 192.168.0.214
+  labels:
+    device_name: "XEROX_3655_PROF"
+    vendor: "Xerox"
+    location: "Professores"
+    role: "principal"
+    snmp_module: "printer_mib"
+    snmp_auth: "ftorino_v2"
+
+- targets:
+    - 192.168.0.216
+  labels:
+    device_name: "XEROX_B310_MARCIA"
+    vendor: "Xerox"
+    location: "Marcia"
+    role: "principal"
+    snmp_module: "printer_mib"
+    snmp_auth: "ftorino_v2"
+
+- targets:
+    - 192.168.0.217
+  labels:
+    device_name: "XEROX_C8170_CENTRALCOPIAS"
+    vendor: "Xerox"
+    location: "CentralCopias"
+    role: "principal"
+    snmp_module: "printer_mib"
+    snmp_auth: "ftorino_v2"
+
+- targets:
+    - 192.168.0.219
+  labels:
+    device_name: "XEROX_B310_ELEMENTAR1ANDAR"
+    vendor: "Xerox"
+    location: "Elementar1Andar"
+    role: "principal"
+    snmp_module: "printer_mib"
+    snmp_auth: "ftorino_v2"
+
+- targets:
+    - 192.168.0.221
+  labels:
+    device_name: "XEROX_5855_CENTRALCOPIAS_BACKUP"
+    vendor: "Xerox"
+    location: "CentralCopias"
+    role: "backup"
+    snmp_module: "printer_mib"
+    snmp_auth: "ftorino_v2"
