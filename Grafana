@@ -1,0 +1,96 @@
+Gráficos de tonner Bar Gauge:
+Title: "${printer_card:text}"
+Options -> Legend: "{{supply}}"
+-------------------------------
+
+label_replace(
+  (
+    (
+      100 * prtMarkerSuppliesLevel{job="printers_snmp", device_name="$printer_card"}
+      /
+      prtMarkerSuppliesMaxCapacity{job="printers_snmp", device_name="$printer_card"}
+    )
+    and on(instance, hrDeviceIndex, prtMarkerSuppliesIndex, prtMarkerSuppliesType)
+      prtMarkerSuppliesMaxCapacity{job="printers_snmp", device_name="$printer_card"} > 0
+    and on(instance, hrDeviceIndex, prtMarkerSuppliesIndex, prtMarkerSuppliesType)
+      prtMarkerSuppliesLevel{job="printers_snmp", device_name="$printer_card"} >= 0
+  )
+  * on(instance, hrDeviceIndex, prtMarkerSuppliesIndex, prtMarkerSuppliesType)
+    group_left(prtMarkerSuppliesDescription)
+      prtMarkerSuppliesDescription{
+        job="printers_snmp",
+        device_name="$printer_card",
+        prtMarkerSuppliesDescription=~"(?i).*(black toner|cyan toner|magenta toner|yellow toner|toner cartridge|print cartridge|black cartridge|cartucho de toner).*"
+      },
+  "supply",
+  "$1",
+  "prtMarkerSuppliesDescription",
+  "^([^,;]+).*"
+)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Códigos de suprimento Table:
+label_replace(
+  label_replace(
+    (
+      (
+        100 * prtMarkerSuppliesLevel{job="printers_snmp", device_name=~"${printer:regex}", device_name!~"XEROX_3655_.*"}
+        /
+        prtMarkerSuppliesMaxCapacity{job="printers_snmp", device_name=~"${printer:regex}", device_name!~"XEROX_3655_.*"}
+      )
+      and on(instance, hrDeviceIndex, prtMarkerSuppliesIndex, prtMarkerSuppliesType)
+        prtMarkerSuppliesMaxCapacity{job="printers_snmp", device_name=~"${printer:regex}", device_name!~"XEROX_3655_.*"} > 0
+      and on(instance, hrDeviceIndex, prtMarkerSuppliesIndex, prtMarkerSuppliesType)
+        prtMarkerSuppliesLevel{job="printers_snmp", device_name=~"${printer:regex}", device_name!~"XEROX_3655_.*"} >= 0
+    )
+    * on(instance, hrDeviceIndex, prtMarkerSuppliesIndex, prtMarkerSuppliesType)
+      group_left(prtMarkerSuppliesDescription)
+        prtMarkerSuppliesDescription{
+          job="printers_snmp",
+          device_name=~"${printer:regex}",
+          device_name!~"XEROX_3655_.*",
+          prtMarkerSuppliesDescription=~"(?i).*(black toner|cyan toner|magenta toner|yellow toner|toner cartridge|print cartridge|black cartridge|cartucho de toner).*"
+        },
+    "supply",
+    "$1",
+    "prtMarkerSuppliesDescription",
+    "^([^,;]+).*"
+  ),
+  "codigo",
+  "$1",
+  "prtMarkerSuppliesDescription",
+  ".*PN[ ]*([^;,\" ]+).*"
+)
+or
+label_replace(
+  label_replace(
+    (
+      (
+        100 * prtMarkerSuppliesLevel{job="printers_snmp", device_name=~"${printer:regex}", device_name=~"XEROX_3655_.*"}
+        /
+        prtMarkerSuppliesMaxCapacity{job="printers_snmp", device_name=~"${printer:regex}", device_name=~"XEROX_3655_.*"}
+      )
+      and on(instance, hrDeviceIndex, prtMarkerSuppliesIndex, prtMarkerSuppliesType)
+        prtMarkerSuppliesMaxCapacity{job="printers_snmp", device_name=~"${printer:regex}", device_name=~"XEROX_3655_.*"} > 0
+      and on(instance, hrDeviceIndex, prtMarkerSuppliesIndex, prtMarkerSuppliesType)
+        prtMarkerSuppliesLevel{job="printers_snmp", device_name=~"${printer:regex}", device_name=~"XEROX_3655_.*"} >= 0
+    )
+    * on(instance, hrDeviceIndex, prtMarkerSuppliesIndex, prtMarkerSuppliesType)
+      group_left(prtMarkerSuppliesDescription)
+        prtMarkerSuppliesDescription{
+          job="printers_snmp",
+          device_name=~"${printer:regex}",
+          device_name=~"XEROX_3655_.*",
+          prtMarkerSuppliesDescription=~"(?i).*(toner cartridge|black toner|cartucho de toner).*"
+        },
+    "supply",
+    "Toner Cartridge",
+    "prtMarkerSuppliesDescription",
+    ".*"
+  ),
+  "codigo",
+  "106R02742",
+  "prtMarkerSuppliesDescription",
+  ".*"
+)
