@@ -66,19 +66,19 @@ ping -c 4 192.168.0.213
 Testar se a impressora responde SNMP:
 
 ```sh
-snmpget -v2c -c ftorino -On IP_DA_IMPRESSORA 1.3.6.1.2.1.1.1.0
+snmpget -v2c -c empresa -On IP_DA_IMPRESSORA 1.3.6.1.2.1.1.1.0
 ```
 
 Testar contador total:
 
 ```sh
-snmpget -v2c -c ftorino -On IP_DA_IMPRESSORA 1.3.6.1.2.1.43.10.2.1.4.1.1
+snmpget -v2c -c empresa -On IP_DA_IMPRESSORA 1.3.6.1.2.1.43.10.2.1.4.1.1
 ```
 
 Se der timeout, verificar na interface web da impressora:
 
 * SNMP v1/v2c habilitado
-* GET Community Name: ftorino
+* GET Community Name: empresa
 * IP Filtering / Allowed Managers liberando o servidor 192.168.0.22
 * Porta UDP 161 liberada
 
@@ -101,7 +101,7 @@ Modelo:
     location: "LOCAL"
     role: "principal"
     snmp_module: "printer_mib"
-    snmp_auth: "ftorino_v2"
+    snmp_auth: "empresa_v2"
 ```
 
 Exemplo:
@@ -115,7 +115,7 @@ Exemplo:
     location: "CL"
     role: "principal"
     snmp_module: "printer_mib"
-    snmp_auth: "ftorino_v2"
+    snmp_auth: "empresa_v2"
 ```
 
 ### 4. Se for Xerox colorida com contador de impressão em cores
@@ -231,7 +231,7 @@ Impressões em cores:
 Testar SNMP:
 
 ```sh
-snmpget -v2c -c ftorino -On IP_DA_IMPRESSORA 1.3.6.1.2.1.1.1.0
+snmpget -v2c -c empresa -On IP_DA_IMPRESSORA 1.3.6.1.2.1.1.1.0
 ```
 
 Se der timeout, verificar:
