@@ -6,7 +6,7 @@
     location: "SOE"
     role: "principal"
     snmp_module: "printer_mib"
-    snmp_auth: "ftorino_v2"
+    snmp_auth: "empresa_v2"
 
 - targets:
     - 192.168.0.207
@@ -16,7 +16,7 @@
     location: "Almoxarifado"
     role: "principal"
     snmp_module: "printer_mib"
-    snmp_auth: "ftorino_v2"
+    snmp_auth: "empresa_v2"
 
 - targets:
     - 192.168.0.208
@@ -26,7 +26,7 @@
     location: "Administracao"
     role: "principal"
     snmp_module: "printer_mib"
-    snmp_auth: "ftorino_v2"
+    snmp_auth: "empresa_v2"
 
 - targets:
     - 192.168.0.209
@@ -36,7 +36,7 @@
     location: "CentralCopias"
     role: "principal"
     snmp_module: "printer_mib"
-    snmp_auth: "ftorino_v2"
+    snmp_auth: "empresa_v2"
 
 - targets:
     - 192.168.0.210
@@ -46,7 +46,7 @@
     location: "Secretaria"
     role: "principal"
     snmp_module: "printer_mib"
-    snmp_auth: "ftorino_v2"
+    snmp_auth: "empresa_v2"
 
 - targets:
     - 192.168.0.211
@@ -56,7 +56,7 @@
     location: "CentralCopias"
     role: "principal"
     snmp_module: "printer_mib"
-    snmp_auth: "ftorino_v2"
+    snmp_auth: "empresa_v2"
 
 - targets:
     - 192.168.0.213
@@ -66,7 +66,7 @@
     location: "CL"
     role: "principal"
     snmp_module: "printer_mib"
-    snmp_auth: "ftorino_v2"
+    snmp_auth: "empresa_v2"
 
 - targets:
     - 192.168.0.214
@@ -76,7 +76,7 @@
     location: "Professores"
     role: "principal"
     snmp_module: "printer_mib"
-    snmp_auth: "ftorino_v2"
+    snmp_auth: "empresa_v2"
 
 - targets:
     - 192.168.0.216
@@ -86,7 +86,7 @@
     location: "Marcia"
     role: "principal"
     snmp_module: "printer_mib"
-    snmp_auth: "ftorino_v2"
+    snmp_auth: "empresa_v2"
 
 - targets:
     - 192.168.0.217
@@ -96,7 +96,7 @@
     location: "CentralCopias"
     role: "principal"
     snmp_module: "printer_mib"
-    snmp_auth: "ftorino_v2"
+    snmp_auth: "empresa_v2"
 
 - targets:
     - 192.168.0.219
@@ -106,5 +106,5 @@
     location: "Elementar1Andar"
     role: "principal"
     snmp_module: "printer_mib"
-    snmp_auth: "ftorino_v2"
+    snmp_auth: "empresa_v2"
 
