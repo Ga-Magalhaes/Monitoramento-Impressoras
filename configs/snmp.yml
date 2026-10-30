@@ -13,7 +13,7 @@ auths:
     priv_protocol: DES
     version: 2
   ftorino_v2:
-    community: ftorino
+    community: empresa
     version: 2
 modules:
   apcups:
