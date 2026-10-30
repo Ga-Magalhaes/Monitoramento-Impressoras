@@ -80,7 +80,7 @@ scrape_configs:
         replacement: xerox_billing
 
       - target_label: __param_auth
-        replacement: ftorino_v2
+        replacement: empresa
 
       - source_labels:
           - __param_target
